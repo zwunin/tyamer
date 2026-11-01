@@ -127,7 +127,7 @@ export default function Home() {
       {/* Шапка: небо + дата + общий счётчик дня */}
       <header className="relative overflow-hidden">
         <img
-          src="/sky.png"
+          src="sky.png"
           alt=""
           aria-hidden
           className="absolute inset-0 h-full w-full object-cover"

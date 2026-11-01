@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* глубокая ночная палитра */
+    --bg: 226 45% 4%;        /* #05060f */
+    --fg: 215 40% 85%;
+    --fg-muted: 216 24% 62%;
+    --glass: 210 60% 85%;
+  }
+  html {
+    color-scheme: dark;
+  }
+  body {
+    background-color: hsl(var(--bg));
+    color: hsl(var(--fg));
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .num {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-feature-settings: 'tnum';
+  }
+}
+
+@layer components {
+  /* стеклянная поверхность */
+  .glass {
+    background: rgba(186, 214, 247, 0.04);
+    border: 1px solid rgba(186, 215, 247, 0.12);
+    box-shadow: inset 0 1px 1px rgba(216, 236, 248, 0.12);
+  }
+  .glass-hover:hover {
+    background: rgba(186, 214, 247, 0.07);
+  }
+  /* ледяной градиент текста с лёгким свечением */
+  .text-ice {
+    background: linear-gradient(0deg, #d8ecf8 0%, #98c0ef 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 16px rgba(174, 207, 242, 0.24);
+  }
+  .divider-fade {
+    background: linear-gradient(90deg, transparent 0%, rgba(186, 215, 247, 0.12) 25% 75%, transparent 100%);
+    height: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

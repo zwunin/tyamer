@@ -25,7 +25,7 @@ jobs:
       - name: Install and Build
         run: |
           cd app
-          npm install --legacy-peer-deps
+          npm install --no-audit --no-fund
           npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
